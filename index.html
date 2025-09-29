@@ -1,322 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artículo - IA, Disrupción y Educación</title>
-  <style>
-    :root {
-      --bg: #f9f9f9;
-      --text: #333;
-      --accent: #1a237e;
-      --accent-contrast: #fff;
-      --highlight: #ffeb3b;
-    }
-    body.dark {
-      --bg: #121212;
-      --text: #e0e0e0;
-      --accent: #3949ab;
-      --accent-contrast: #e0e0e0;
-      --highlight: #ffeb3b;
-    }
-
-    body {
-      font-family: "Georgia", serif;
-      margin: 0;
-      line-height: 1.6;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      transition: background 0.3s, color 0.3s;
-    }
-    /* Menú lateral */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 220px;
-      background: var(--accent);
-      color: var(--accent-contrast);
-      padding: 2rem 1rem;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      overflow-y: auto;
-      transition: background 0.3s;
-    }
-    nav h2 {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav ul li {
-      margin: 0.8rem 0;
-    }
-    nav ul li a {
-      color: var(--accent-contrast);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-    nav ul li a.active {
-      font-weight: bold;
-      color: var(--highlight);
-    }
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    /* Contenido principal */
-    main {
-      margin-left: 240px;
-      padding: 2rem;
-      max-width: 900px;
-    }
-    header {
-      background: var(--accent);
-      color: var(--accent-contrast);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      transition: background 0.3s;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    header h2 {
-      margin-top: 0.5rem;
-      font-weight: normal;
-      font-size: 1.2rem;
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    section h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.3rem;
-      color: var(--accent);
-      transition: color 0.3s;
-    }
-    p {
-      text-align: justify;
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-    a {
-      color: var(--accent);
-    }
-
-    /* Botones flotantes */
-    #btnTop, #btnTheme {
-      display: none;
-      position: fixed;
-      z-index: 99;
-      font-size: 16px;
-      border: none;
-      outline: none;
-      background-color: var(--accent);
-      color: var(--accent-contrast);
-      cursor: pointer;
-      padding: 12px 16px;
-      border-radius: 50%;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      transition: background 0.3s;
-    }
-    #btnTop:hover, #btnTheme:hover {
-      background-color: #0d1654;
-    }
-    #btnTop {
-      bottom: 30px;
-      right: 30px;
-    }
-    #btnTheme {
-      bottom: 90px;
-      right: 30px;
-      display: block;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        position: relative;
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-      }
-      main {
-        margin-left: 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligencia Artificial, Disrupción y Formación Integral: Una Reflexión para Reorientar la Educación Superior</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f9f9f9; /* Fondo claro académico */
+            color: #333; /* Texto oscuro */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #1e1e1e; /* Fondo oscuro para modo nocturno */
+            color: #ddd; /* Texto claro */
+        }
+        header { 
+            background-color: #003366; /* Azul marino académico */
+            color: white; 
+            padding: 10px 20px; 
+            text-align: center; 
+        }
+        body.dark-mode header {
+            background-color: #001a33; /* Variación más oscura */
+        }
+        nav { 
+            background-color: #004488; /* Azul más claro para navegación */
+            color: white; 
+            padding: 10px; 
+        }
+        body.dark-mode nav {
+            background-color: #002b55; /* Variación oscura */
+        }
+        nav ul { 
+            list-style-type: none; 
+            margin: 0; 
+            padding: 0; 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+        }
+        nav ul li { 
+            margin: 5px 10px; 
+        }
+        nav ul li a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+        nav ul li a:hover { 
+            text-decoration: underline; 
+        }
+        main { 
+            max-width: 800px; 
+            margin: 20px auto; 
+            padding: 20px; 
+            background-color: white; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+            transition: background-color 0.3s;
+        }
+        body.dark-mode main {
+            background-color: #2a2a2a; /* Fondo gris oscuro */
+        }
+        section { 
+            margin-bottom: 20px; 
+        }
+        h1, h2, h3 { 
+            color: #003366; /* Azul académico para títulos */
+        }
+        body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+            color: #99ccff; /* Azul claro para modo oscuro */
+        }
+        footer { 
+            text-align: center; 
+            padding: 10px; 
+            background-color: #003366; 
+            color: white; 
+        }
+        body.dark-mode footer {
+            background-color: #001a33;
+        }
+        /* Botón flotante para toggle de modo */
+        #mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #004488;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+        body.dark-mode #mode-toggle {
+            background-color: #99ccff;
+            color: #1e1e1e;
+        }
+        #mode-toggle:hover {
+            background-color: #003366;
+        }
+        body.dark-mode #mode-toggle:hover {
+            background-color: #66a3ff;
+        }
+        /* Estilos para imágenes sugeridas */
+        .article-image {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        body.dark-mode .article-image {
+            border-color: #555;
+        }
+    </style>
 </head>
 <body>
-  <!-- Menú lateral -->
-  <nav>
-    <h2>Contenido</h2>
-    <ul>
-      <li><a href="#resumen">Resumen</a></li>
-      <li><a href="#introduccion">Introducción</a></li>
-      <li><a href="#contenido">Desarrollo</a></li>
-      <li><a href="#conclusiones">Conclusiones</a></li>
-      <li><a href="#referencias">Referencias</a></li>
-    </ul>
-  </nav>
-
-  <!-- Contenido principal -->
-  <main>
     <header>
-      <h1>Inteligencia artificial, disrupción y formación integral</h1>
-      <h2>Una reflexión para reorientar la educación superior</h2>
-      <p><em>Yesenia Muñoz - Angela N. Chingal</em></p>
-      <p><em>Tutor: Alex Berrio</em></p>
-      <p><small>Universidad Nacional Abierta y a Distancia · ECEDU · 10 de Septiembre de 2025</small></p>
+        <h1>Inteligencia Artificial, Disrupción y Formación Integral: Una Reflexión para Reorientar la Educación Superior</h1>
+        <p>Por Yesenia Muñoz y Angela N. Chingal</p>
+        <p>Universidad Nacional Abierta y a Distancia - ECEDU</p>
+        <p>10 de Septiembre de 2025</p>
     </header>
-   
+    
+    <nav>
+        <ul>
+            <li><a href="#resumen">Resumen</a></li>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#ia-recomendacion">IA para la Recomendación en Educación en Línea</a></li>
+            <li><a href="#educacion-disruptiva">Educación Disruptiva Socioformativa</a></li>
+            <li><a href="#disrupcion-digital">Disrupción Digital: Una Lectura Socio-Técnica</a></li>
+            <li><a href="#necesidad-educacion-digital">La Necesidad de una Educación Digital</a></li>
+            <li><a href="#ia-humanista">¿Dónde Encaja la IA Recomendadora en un Proyecto Humanista?</a></li>
+            <li><a href="#marco-4c">Un Marco Operativo de 4C</a></li>
+            <li><a href="#implicaciones">Implicaciones para la Docencia y la Gestión Curricular</a></li>
+            <li><a href="#convergencia">Una Convergencia Exigente</a></li>
+            <li><a href="#referencias">Referencias Bibliográficas</a></li>
+        </ul>
+    </nav>
+    
+    <main>
         <section id="resumen">
-      <h2>Resumen</h2>
-      <p>Planteo una reflexión sobre cómo articular, de manera responsable, tres corrientes que hoy atraviesan la educación superior, contrastando la actual realidad: los sistemas de recomendación basados en inteligencia artificial para entornos en línea; la educación disruptiva con enfoque socioformativo; y la lectura socio-técnica de la disrupción digital y la consiguiente necesidad de una educación genuinamente digital. La convergencia de estas líneas exige ir más allá del “uso” instrumental de tecnologías y asumir su carácter de mediaciones sociotécnicas que reorganizan el currículo, la evaluación y la ética del cuidado. Se propone un marco operativo de las 4C: Contexto, Curaduría algorítmica responsable, Cuidado ético y Coevaluación formativa para orientar decisiones pedagógicas en programas universitarios en modalidad virtual e híbrida. (Sanabria & Regil; Valles, Parra & Fierro; García-Perdomo; García Aretio; Mora).</p>
-    </section>
-
-    <section id="introduccion">
-      <h2>Introducción</h2>
-      <p><h3>“Uso de TIC” a la comprensión sociotécnica”</h3></p>
-      <p>En la última década, la educación superior ha pasado de “incorporar TIC” a habitar ecosistemas digitales donde contenidos, trayectorias y evaluaciones se vuelven personalizables, medibles y recombinables. Esta mutación no es solo técnica: redefine tiempos, espacios, roles y expectativas de aprendizaje. Comprenderla requiere una mirada socio-técnica que explique cómo tecnologías y prácticas sociales se co-configuran, produciendo hibridaciones como clases, foros, tutorías, analytics, bibliotecas y/o repositorios con IA, en donde se ocupa aquello existente y conocido adaptándolo con las nuevas opciones y alternativas que brinda la IA.</p>
-    </section>
-
-    <section id="contenido">
-      <h2>Desarrollo</h2>
-      <h3>IA para la recomendación en educación en línea: promesa y condiciones</h3>
-      <p>La literatura reciente muestra que los sistemas de recomendación aplicados a recursos educativos favorecen la experiencia en línea al mejorar la pertinencia, diversidad y oportunidad de los materiales propuestos al estudiantado. Su valor no reside solo en “sugerir”; reside en alinear las sugerencias con objetivos formativos, perfiles y momentos del curso, y en transparentar criterios para evitar sesgos o efectos de “burbuja cognitiva”. Así, la recomendación debe estar anclada en el diseño instruccional y en criterios de calidad...</p>
-
-      <h3>Educación disruptiva socioformativa: hacia la formación integral y humanista</h3>
-      <p>Los enfoques de disrupción educativa que se orientan por la socioformación reportan resultados significativos en la formación integral: promueven ambientes inclusivos, trabajo colaborativo y uso de tecnologías del aprendizaje y el conocimiento (TAC) para desarrollar competencias transversales y sentido de proyecto vital, lo cual es sumamente oportuno en la educación a través de los tiempos, aún más en momentos donde la diversidad y la inclusión son primordiales en el mundo, cuanto más en la formación y en la preparación de quienes lo habitan, crean y promueven los saberes, el conocimiento que es la razón de ser y existencialmente la verdad. Un estudio con 2.223 universitarios identifica al modelo socioformativo como el que mejor predice la formación humanista (≈80%), resultado que interpela a reorganizar el currículo en torno a problemas auténticos y evaluación situada.</p>
-
-      <h3>Disrupción digital: una lectura socio-técnica</h3>
-      <p>Entender la “disrupción” como moda tecnológica empobrece el análisis. Una aproximación técnico-social recuerda que tecnología y sociedad se transforman mutuamente, el avance de la una es lineal con la otra; no hay neutralidad: cada herramienta incorpora visiones sobre conocimiento, autoridad y participación. Así, introducir IA no es añadir un “plus”, sino participar en procesos de reconfiguración institucional como políticas de datos, nuevos roles docentes, alfabetización algorítmica para estudiantes, analizar los modelos educativos, los currículos institucionales, los PEI, los proyectos transversales, etc</p>
-
-      <h3>La necesidad de una educación digital</h3>
-      <p>El tránsito forzado a la virtualidad evidenció que la educación digital implica cultura pedagógica, criterios de calidad y marcos éticos específicos: no basta con migrar contenidos, se requieren modelos didácticos, acompañamiento y evaluación coherentes con el medio. La educación digital, bien concebida, es condición para la equidad y la continuidad del aprendizaje a lo largo de la vida. Lo cual también se convierte en un reto, en las zonas donde la era digital llega más lento, donde no se tiene las suficientes herramientas para emerger en gran proximidad; sin embargo, la educación y la enseñanza son la oportunidad de construir un mundo mejor, un futuro con esperanza que involucra a “todos” es allí donde la astucia cobra vida y se vuelve el motor y la oportunidad de todas las comunidades, allá donde poco llega, allá donde nadie va, es allá donde los profesionales van a impactar y a ser el puente entre una realidad educativa y los nuevos avances tecnológico-educativos donde se usa las diferentes herramientas y hoy en día la IA, para este aprovechamiento el material Offline, será una posibilidad maravillosa que permitirá llevar estos nuevos recursos educativos a toda la población.</p>
-
-      <h3>¿Dónde encaja la IA recomendadora en un proyecto humanista?</h3>
-      <p>La respuesta pasa por el diseño: la IA debe ampliar agencia, no sustituirla. En clave socioformativa, su función es apoyar a estudiantes y docentes para identificar rutas, recursos y desafíos relevantes, manteniendo visibles los criterios de selección y abriendo espacios de metacognición. Cuando la recomendación se integra a proyectos auténticos, con rúbricas de desempeño y retroalimentación dialógica, su potencia aumenta y su riesgo de heteronomía algorítmica disminuye, generando mayormente un conocimiento factible a través de la construcción integral.
-La disrupción digital constituye uno de los fenómenos más significativos de la sociedad contemporánea y, en particular, del ámbito educativo, puesto que ha transformado radicalmente las formas de enseñar, aprender y producir conocimiento, en el contexto escolar, esta transformación ha implicado que los docentes reconfiguren sus prácticas pedagógicas, pasando de un uso meramente instrumental de las tecnologías hacia escenarios que promuevan aprendizajes más significativos, sin embargo, aún persiste la tendencia a reducir la tecnología a un simple recurso mediático, lo cual limita su potencial emancipador y la posibilidad de generar procesos de reflexión crítica y autonomía en los estudiantes</p>
-<p>Es así como Rincón y Quiñones (2017) sostienen que trascender la visión utilitarista de las TIC es fundamental para asumirlas como parte de la cultura digital, en la que la interactividad y la inteligencia colectiva posibilitan experiencias de aprendizaje más autónomas y colaborativas, la diferencia entre la visión instrumental y la emancipadora radica en que la primera concibe a la tecnología como un accesorio para reforzar la enseñanza tradicional, mientras que la segunda la entiende como un medio para repensar la práctica educativa y generar sujetos críticos capaces de actuar en contextos sociales complejos, para los docentes, esto supone dejar de ser transmisores de contenidos y convertirse en mediadores que guían procesos de construcción de conocimiento; para los estudiantes, significa transitar de consumidores pasivos de información a productores activos de saber en entornos digitales.</p>
-<p>La sociedad digital se caracteriza también por una aceleración sin precedentes de las innovaciones disruptivas, lo que configura un escenario volátil, incierto, complejo y ambiguo, tal como advierte García  (2019), en este contexto la educación no puede sostenerse en modelos rígidos, sino que debe integrar metodologías digitales que permitan a los estudiantes discernir críticamente en medio de la sobreabundancia de información. Si la escuela no responde a esta realidad, otros actores ocuparán su lugar, aumentando la brecha entre el sistema educativo y la vida cotidiana de las nuevas generaciones.</p>
-<p>Frente a este desafío, la educación disruptiva socioformativa se presenta como una alternativa transformadora, al articular lo tecnológico con lo humanista. Los autores Valles, et al (2023) señalan que este enfoque no se limita a la adquisición de competencias digitales, sino que busca el desarrollo integral del estudiante mediante la formación de pensamiento crítico, responsabilidad social y capacidad para resolver problemas complejos en contextos reales, por ejemplo, en escenarios escolares concretos, la socioformación podría aplicarse a través de proyectos colaborativos en los que los estudiantes, apoyados por Tecnologías del Aprendizaje y el Conocimiento (TAC), trabajen en la solución de problemas comunitarios como la gestión de residuos, el cuidado del agua o el uso responsable de la inteligencia artificial, integrando saberes académicos con compromisos éticos y sociales.</p>
-</p>
-
-      <h3>Un marco operativo de 4C para programas universitarios virtuales e híbridos</h3>
-      <ul>
-        <li><strong>Contexto:</strong> mapear perfiles, brechas de acceso, demandas locales y metas de cada curso o programa. La analítica educativa debe leerse con la docencia y para decisiones pedagógicas contextualizadas. 
-Curaduría algorítmica responsable: combinar recomendaciones de IA con curaduría docente, criterios de diversidad de fuentes y mecanismos anti-sesgo.
-Cuidado ético: políticas claras de datos, alfabetización algorítmica para estudiantes y pautas de bienestar digital que moderen carga y exposición. 
-Coevaluación formativa: integrar revisión por pares, autoevaluación guiada y retroalimentación docente apoyada en trazas de aprendizaje, priorizando la reflexión sobre el proceso y no solo el “acierto” recomendado por el sistema. 
-</li>
-        <li><strong>Curaduría algorítmica responsable: pombinar recomendaciones de IA con curaduría docente, criterios de diversidad de fuentes y mecanismos anti-sesgo.</li>
-        <li><strong>Cuidado ético:</strong>: políticas claras de datos, alfabetización algorítmica para estudiantes y pautas de bienestar digital que moderen carga y exposición. </li>
-        <li><strong>Coevaluación formativa:</strong>: integrar revisión por pares, autoevaluación guiada y retroalimentación docente apoyada en trazas de aprendizaje, priorizando la reflexión sobre el proceso y no solo el “acierto” recomendado por el sistema. </li>
-      </ul>
-
-      <h3>Implicaciones para la docencia y la gestión curricular</h3>
-      <p>Rediseño de roles: los docentes como diseñador-curador y tutor metacognitivo que enseña a leer y discutir recomendaciones, y los educandos como sujeto que negocia rutas y evidencias de logro. 
-Evaluación auténtica: tareas basadas en problemas y proyectos, con evidencias multimodales y criterios compartidos, donde la IA apoya seguimiento y andamiaje, no califica en opacidad.
-Gobernanza de datos: comité académico-ético que revise periódicamente métricas, sesgos y efectos no previstos de los sistemas de recomendación sobre trayectorias y equidad. 
-</p>
-    </section>
-
- </section>
-
-    <!-- Imagen conceptual -->
-    <section id="imagen-4c">
-      <h2>Marco conceptual de las 4C</h2>
-      <figure style="text-align:center; margin: 2rem 0;">
-        <img src="imagen-4c.png" 
-             alt="Ilustración conceptual de las 4C en educación digital e inteligencia artificial" 
-             style="max-width: 80%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-        <figcaption style="font-size:0.9rem; color:gray; margin-top:0.5rem;">
-          Representación visual del marco de las 4C: Contexto, Curaduría algorítmica responsable, 
-          Cuidado ético y Coevaluación formativa.
-        </figcaption>
-      </figure>
-    </section>
-
-    <section id="conclusiones">
-      <h2>Conclusiones</h2>
-      <p>La disrupción valiosa no es la de “lo nuevo por lo nuevo”, sino la que mejora la justicia educativa y la calidad del aprendizaje. Integrar IA recomendadora en clave socioformativa y con comprensión socio-técnica de la disrupción obliga a prácticas más reflexivas, transparentes y cuidadosas. Esa es, hoy, la medida de una verdadera educación digital en un mundo digital.</p>
-    </section>
-
-    <section id="referencias">
-      <h2>Referencias bibliográficas</h2>
-      <ul>
-        <li>Sanabria, G.; Regil, L. (2024). <em>Inteligencia artificial para la recomendación de recursos en educación en línea.</em> <a href="http://www.udgvirtual.udg.mx/apertura//index.php/apertura/article/view/2542">Enlace</a></li>
-        <li>Valles, H., Parra, H., Fierro, L. A. (2023). <em>La educación disruptiva socio formativa...</em> <a href="http://resu.anuies.mx/ojs/index.php/resu/article/view/2654">Enlace</a></li>
-        <li>García-Perdomo, V. (2019). <em>Aproximación técnico-social...</em> <a href="https://palabraclave.unisabana.edu.co/index.php/palabraclave/article/view/11309">Enlace</a></li>
-        <li>García Aretio, L. (2019). <em>Necesidad de una educación digital...</em> <a href="https://revistas.uned.es/index.php/ried/article/view/23911">Enlace</a></li>
-        <li>Mora, A. M. (2022). <em>Disrupción en la educación</em>. <a href="https://repository.unad.edu.co/handle/10596/48316">Enlace</a></li>
-        <li>Morales, S. (2020). <em>Escritura colaborativa</em>. <a href="https://repository.unad.edu.co/handle/10596/33810">Enlace</a></li>
-      </ul>
-    </section>
-
+            <h2>Resumen</h2>
+            <img src="1A.jpg" width="300" height="300" alt="Representación de IA en entornos educativos" class="article-image">
+            <p>Planteo una reflexión sobre cómo articular, de manera responsable, tres corrientes que hoy atraviesan la educación superior, contrastando la actual realidad: </p>
+            <ul>
+                <li>Los sistemas de recomendación basados en inteligencia artificial para entornos en línea.</li>
+                <li>La educación disruptiva con enfoque socioformativo.</li>
+                <li>La lectura socio-técnica de la disrupción digital y la consiguiente necesidad de una educación genuinamente digital.</li>
+            </ul>
+            <p>La convergencia de estas líneas exige ir más allá del “uso” instrumental de tecnologías y asumir su carácter de mediaciones sociotécnicas que reorganizan el currículo, la evaluación y la ética del cuidado. Se propone un marco operativo de las 4C: Contexto, Curaduría algorítmica responsable, Cuidado ético y Coevaluación formativa para orientar decisiones pedagógicas en programas universitarios en modalidad virtual e híbrida. (Sanabria & Regil; Valles, Parra & Fierro; García-Perdomo; García Aretio; Mora).</p>
+        </section>
+        
+        <section id="introduccion">
+            <h2>Introducción</h2>
+            <img src="2.jpg" width="300" height="300" alt="Evolución de TIC a ecosistemas digitales" class="article-image">
+            <p>En la última década, la educación superior ha pasado de “incorporar TIC” a habitar ecosistemas digitales donde contenidos, trayectorias y evaluaciones se vuelven personalizables, medibles y recombinables. Esta mutación no es solo técnica: redefine tiempos, espacios, roles y expectativas de aprendizaje. Comprenderla requiere una mirada socio-técnica que explique cómo tecnologías y prácticas sociales se co-configuran, produciendo hibridaciones como clases, foros, tutorías, analytics, bibliotecas y/o repositorios con IA.</p>
+        </section>
+        
+        <section id="ia-recomendacion">
+            <h2>IA para la Recomendación en Educación en Línea: Promesa y Condiciones</h2>
+            <img src="3.jpg" width="300" height="300" alt="Sistema de recomendación basado en IA" class="article-image">
+            <p>Los sistemas de recomendación aplicados a recursos educativos mejoran la pertinencia, diversidad y oportunidad de los materiales. Su valor reside en alinear sugerencias con objetivos formativos y perfiles, transparentando criterios para evitar sesgos o “burbujas cognitivas”. La recomendación debe anclarse en el diseño instruccional, priorizando calidad y necesidades sobre popularidad.</p>
+        </section>
+        
+        <section id="educacion-disruptiva">
+            <h2>Educación Disruptiva Socioformativa: Hacia la Formación Integral y Humanista</h2>
+            <img src="4.JPG" width="300" height="300" alt="Formación integral con tecnologías del aprendizaje" class="article-image">
+            <p>Los enfoques socioformativos promueven ambientes inclusivos, colaboración y uso de TAC para competencias transversales y proyectos vitales. Un estudio con 2.223 universitarios muestra que este modelo predice la formación humanista en ≈80%, impulsando currículos basados en problemas auténticos y evaluación situada.</p>
+        </section>
+        
+        <section id="disrupcion-digital">
+            <h2>Disrupción Digital: Una Lectura Socio-Técnica</h2>
+            <img src="5.JPG" width="300" height="300" alt="Interacción entre tecnología y sociedad" class="article-image">
+            <p>La disrupción no es mera moda tecnológica; tecnología y sociedad se transforman mutuamente sin neutralidad. Introducir IA implica reconfiguración institucional, como políticas de datos, roles docentes y alfabetización algorítmica.</p>
+        </section>
+        
+        <section id="necesidad-educacion-digital">
+            <h2>La Necesidad de una Educación Digital</h2>
+            <img src="6.JPG" width="300" height="300" alt="Educación digital para equidad y acceso" class="article-image">
+            <p>La virtualidad forzada reveló que la educación digital requiere cultura pedagógica, calidad y ética: modelos didácticos coherentes para equidad y aprendizaje continuo. En zonas con brechas digitales, la IA y recursos offline pueden puente entre realidades educativas y avances tecnológicos.</p>
+        </section>
+        
+        <section id="ia-humanista">
+            <h2>¿Dónde Encaja la IA Recomendadora en un Proyecto Humanista?</h2>
+            <img src="7.JPG" width="300" height="300" alt="Integración de IA en enfoques humanistas" class="article-image">
+            <p>La IA debe ampliar agencia, no sustituirla. En socioformación, apoya rutas y desafíos relevantes, con criterios visibles y metacognición. Integrada a proyectos auténticos, reduce riesgos algorítmicos y fomenta conocimiento integral.</p>
+            <p>La disrupción digital transforma enseñanza y aprendizaje, requiriendo pasar de usos instrumentales a escenarios significativos. Rincón y Quiñones (2017) enfatizan trascender visiones utilitaristas para culturas digitales colaborativas, convirtiendo docentes en mediadores y estudiantes en productores activos.</p>
+            <p>En contextos volátiles, como señala García (2019), la educación debe integrar metodologías críticas. La socioformación articula lo tecnológico con lo humanista, desarrollando pensamiento crítico y responsabilidad social mediante proyectos reales (Valles et al., 2023).</p>
+        </section>
+        
+        <section id="marco-4c">
+            <h2>Un Marco Operativo de 4C para Programas Universitarios Virtuales e Híbridos</h2>
+            <img src="8.JPG" width="300" height="300" alt="Diagrama del marco operativo de las 4C" class="article-image">
+            <ul>
+                <li><strong>Contexto</strong>: Mapear perfiles, brechas y metas; usar analítica para decisiones pedagógicas.</li>
+                <li><strong>Curaduría Algorítmica Responsable</strong>: Combinar IA con curaduría docente y anti-sesgos.</li>
+                <li><strong>Cuidado Ético</strong>: Políticas de datos, alfabetización y bienestar digital.</li>
+                <li><strong>Coevaluación Formativa</strong>: Integrar pares, autoevaluación y reflexión sobre procesos.</li>
+            </ul>
+        </section>
+        
+        <section id="implicaciones">
+            <h2>Implicaciones para la Docencia y la Gestión Curricular</h2>
+            <img src="9.JPG" width="300" height="300" alt="Implicaciones para la docencia digital" class="article-image">
+            <ul>
+                <li><strong>Rediseño de Roles</strong>: Docentes como curadores metacognitivos; estudiantes como negociadores de rutas.</li>
+                <li><strong>Evaluación Auténtica</strong>: Tareas basadas en problemas con IA para andamiaje transparente.</li>
+                <li><strong>Gobernanza de Datos</strong>: Comité ético para revisar métricas y equidad.</li>
+            </ul>
+        </section>
+        
+        <section id="convergencia">
+            <h2>Una Convergencia Exigente</h2>
+            <img src="10.JPG" width="300" height="300" alt="Convergencia de IA, disrupción y educación" class="article-image">
+            <p>La disrupción valiosa mejora justicia educativa. Integrar IA socioformativa exige prácticas reflexivas y transparentes, midiendo una educación digital auténtica.</p>
+        </section>
+        
+        <section id="referencias">
+            <h2>Referencias Bibliográficas</h2>
+            <ul>
+                <li>Sanabria, G.; Regil, L. (2024). Inteligencia artificial para la recomendación de recursos en educación en línea. <a href="http://www.udgvirtual.udg.mx/apertura//index.php/apertura/article/view/2542">Enlace</a></li>
+                <li>Valles, H., Parra, H., Fierro, L. A. (2023). La educación disruptiva socio formativa y el uso de la tecnología para la formación integral y humanista de estudiantes universitarios. <a href="http://resu.anuies.mx/ojs/index.php/resu/article/view/2654">Enlace</a></li>
+                <li>García-Perdomo, V. (2019). Aproximación técnico-social al entendimiento de la disrupción digital. <a href="https://palabraclave.unisabana.edu.co/index.php/palabraclave/article/view/11309">Enlace</a></li>
+                <li>García Aretio, L. (2019). Necesidad de una educación digital en un mundo digital. RIED. Revista Iberoamericana de Educación a Distancia <a href="https://revistas.uned.es/index.php/ried/article/view/23911">Enlace</a></li>
+                <li>Mora, A. M. (2022). Disrupción en la educación. [Objeto virtual de Información OVI]. Repositorio Institucional UNAD. <a href="https://repository.unad.edu.co/handle/10596/48316">Enlace</a></li>
+                <li>Morales, S. (2020). Escritura colaborativa. [Objeto virtual de información OVI]. Repositorio Institucional UNAD. <a href="https://repository.unad.edu.co/handle/10596/33810">Enlace</a></li>
+            </ul>
+        </section>
+    </main>
+    
     <footer>
-      <p>© 2025 Universidad Nacional Abierta y a Distancia · ECEDU</p>
+        <p>&copy; 2025 Yesenia Muñoz y Angela N. Chingal. Todos los derechos reservados.</p>
     </footer>
-  </main>
-
-  <!-- Botones -->
-  <button onclick="topFunction()" id="btnTop" title="Volver arriba">↑</button>
-  <button onclick="toggleTheme()" id="btnTheme" title="Cambiar tema">🌙</button>
-
-  <!-- Scripts -->
-  <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav ul li a");
-    const btnTop = document.getElementById("btnTop");
-    const btnTheme = document.getElementById("btnTheme");
-
-    // Scrollspy
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-          current = section.getAttribute("id");
+    
+    <button id="mode-toggle" onclick="toggleMode()">🌙</button>
+    
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.getElementById('mode-toggle');
+            if (document.body.classList.contains('dark-mode')) {
+                button.textContent = '☀️';
+            } else {
+                button.textContent = '🌙';
+            }
         }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-
-      // Botón volver arriba
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btnTop.style.display = "block";
-      } else {
-        btnTop.style.display = "none";
-      }
-    });
-
-    // Volver arriba
-    function topFunction() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Modo claro/oscuro
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-      btnTheme.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-    }
-  </script>
+    </script>
 </body>
 </html>
